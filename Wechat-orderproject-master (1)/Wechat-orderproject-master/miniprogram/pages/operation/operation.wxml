@@ -1,0 +1,22 @@
+<!--pages/operation/operation.wxml-->
+<view class="itemView">
+<view class='add'>增加菜品：</view>
+<view>
+<view class='add'>name：</view>
+<input type='text' class='input' name='name' placeholder="请输入菜名" bindinput="goodsNameInput"></input>
+<view class='add'>price：</view>
+<input type='number' class='input' name='price' placeholder="请输入价格" bindinput="goodsPriceInput"></input>
+</view>
+<view>
+  <button class='btn' bindtap='clickButton' form-type="submit">确定</button>
+</view>
+<view class='add'>删除菜品：</view>
+<view>
+<view class='add'>name：</view>
+<input type='text' class='input' name='name' placeholder="请输入菜名" bindinput="goodsNameInput2"></input>
+</view>
+<view>
+  <button class='btn' bindtap='clickButton2' form-type="submit">确定</button>
+</view>
+</view>
+

@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- <view class='choosezone'>
+    <view class='chooseitem'>
+      <view class='chooseitem-font'>查看订单</view>
+    </view>
+  </view>
+
+  <view class='choosezone'>
+    <view class='chooseitem'>
+      <view class='chooseitem-font'>查看购买历史</view>
+    </view>
+  </view> -->
+
+  <view class='choosezone'>
+    <view class='chooseitem'>
+      <view class='chooseitem-font' bindtap='checkChief'>我是厨师</view>
+    </view>
+  </view>
+
+  <view class='choosezone' wx:if="{{chief}}">
+    <view class='chooseitem'>
+      <view class='chooseitem-font' bindtap='orderManage'>处理订单</view>
+    </view>
+  </view>
+
+  <view class='choosezone'>
+    <view class='chooseitem'>
+      <view class='chooseitem-font' bindtap='checkOwner'>我是店主</view>
+    </view>
+  </view>
+
+  <view class='choosezone' wx:if="{{owner}}">
+    <view class='chooseitem'>
+      <view class='chooseitem-font' bindtap='changeNotice'>修改公告</view>
+    </view>
+  </view>
+
+  <view class='choosezone' wx:if="{{owner}}">
+    <view class='chooseitem'>
+      <view class='chooseitem-font' bindtap='menuop'>修改菜单</view>
+    </view>
+  </view>
+
+    <!-- <view class='choosezone' wx:if="{{owner}}">
+      <view class='chooseitem'>
+        <view class='chooseitem-font'>查看店内订单</view>
+      </view>
+    </view> -->
+</view>
